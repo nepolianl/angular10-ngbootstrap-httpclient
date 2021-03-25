@@ -1,0 +1,54 @@
+<div class="card border-info">
+    <div class="card-header">
+        <div class="d-flex justify-content-between">
+            <div class="card-title h4">Order Detail</div>
+            <a role="button" class="btn btn-primary" (click)="modalService.open('create_order_dialog')">Create Web Order</a>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Web Order Number</th>
+                    <td>{{(shared.selectedOrder$ | async)?.webOrderNumber}}</td>
+                </tr>
+                <tr>
+                    <th>Created</th>
+                    <td>{{(shared.selectedOrder$ | async)?.created}}</td>
+                </tr>
+                <tr>
+                    <th>Carrier</th>
+                    <td>{{(shared.selectedOrder$ | async)?.carrier}}</td>
+                </tr>
+                <tr>
+                    <th>Account Id</th>
+                    <td>{{(shared.selectedOrder$ | async)?.accountId}}</td>
+                </tr>
+                <tr>
+                    <th>Induction Status</th>
+                    <td>{{(shared.selectedOrder$ | async)?.inductionStatus}}</td>
+                </tr>
+                <tr>
+                    <th>Order Status</th>
+                    <td>{{(shared.selectedOrder$ | async)?.orderStatus}}</td>
+                </tr>
+                <tr>
+                    <th>Order Type</th>
+                    <td>{{(shared.selectedOrder$ | async)?.orderType}}</td>
+                </tr>
+                <tr>
+                    <th>Store Alias</th>
+                    <td>{{(shared.selectedOrder$ | async)?.storeAlias}}</td>
+                </tr>
+                <tr>
+                    <th>Payment Type</th>
+                    <td>{{(shared.selectedOrder$ | async)?.paymentType}}</td>
+                </tr>
+                <tr>
+                    <th>Keywords</th>
+                    <td>{{(shared.selectedOrder$ | async)?.Keywords}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

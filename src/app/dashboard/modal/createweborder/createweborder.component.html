@@ -1,0 +1,116 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Create WebOrder</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <form [formGroup]="createOrderForm">
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="webOrderNumber">Web Order Number</label>
+                  <input type="text" class="form-control" id="webOrderNumber" formControlName="webOrderNumber">
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="accountId">Account ID</label>
+                  <input type="text" class="form-control" id="accountId" formControlName="accountId">
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="country">Country</label>
+                  <input type="text" class="form-control" id="country" formControlName="country">
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="storeFrontAlias">Store Front Alias</label>
+                  <input type="text" class="form-control" id="storeFrontAlias" formControlName="storeFrontAlias">
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-4">
+                  <label for="parts">Parts</label>
+                  <input type="text" class="form-control" id="parts" formControlName="parts">
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="carrier">Carrier</label>
+                  <select class="form-control" id="carrier" formControlName="carrier">
+                    <option>ICARUS</option>
+                    <option>CYPRESS</option>
+                    <option>AIRTEL</option>
+                    <option>JIO</option>
+                  </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="deliveryMethod">Delivery Method</label>
+                <select class="form-control" id="deliveryMethod" formControlName="deliveryMethod">
+                  <option>STH</option>
+                  <option>IPK</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-4">
+                  <label for="inductionStatus">Induction Status</label>
+                  <select class="form-control" id="inductionStatus" formControlName="inductionStatus">
+                    <option>PENDING</option>
+                    <option>INDUCTED</option>
+                  </select>
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="orderType">Order Type</label>
+                  <select class="form-control" id="orderType" formControlName="orderType">
+                    <option>STS</option>
+                    <option>STH</option>
+                    <option>SFS</option>
+                    <option>PUP</option>
+                    <option>Locked_Phone</option>
+                    <option>IUP_STH</option>
+                    <option>IPK</option>
+                    <option>IDL</option>
+                    <option>Giveback_US</option>
+                    <option>Giveback_EMEA</option>
+                    <option>GiftMessage</option>
+                    <option>Fastlane_Checkout</option>
+                    <option>eFapiao</option>
+                    <option>Apollo_KTO_APU</option>
+                    <option>ATT_Next</option>
+                    <option>Engraving</option>
+                    <option>Engraving Emoji</option>
+                    <option>WinterGreen_EMEA</option>
+                    <option>ByPassPreAuth</option>
+                    <option>Liger</option>
+                    <option>Giftcard</option>
+                  </select>
+              </div>
+              <div class="form-group col-md-4">
+                  <label for="orderStatus">Order Status</label>
+                  <select class="form-control" id="orderStatus" formControlName="orderStatus">
+                    <option>PROCESSING</option>
+                    <option>PROCESSED</option>
+                    <option>FAILED</option>
+                  </select>
+              </div>
+          </div>
+          <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="paymentType">Payment Type</label>
+                  <select class="form-control" id="paymentType" formControlName="paymentType">
+                    <option>VISA</option>
+                    <option>MASTERCARD</option>
+                    <option>ALIPAY</option>
+                    <option>UK_APPLE_FINANCING</option>
+                    <option>APPLE_CARD_ON_ACCOUNT</option>
+                    <option>YCARD</option>
+                  </select>
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="keywords">Keywords</label>
+                  <input type="text" class="form-control" id="keywords" formControlName="keywords">
+              </div>
+          </div>
+      </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-warning" (click)="modal.dismiss('cancel click')">Cancel</button>
+    <button type="submit" ngbAutofocus class="btn btn-success" (click)="onSubmit()" [disabled]="!createOrderForm.valid">Create</button>
+</div>
